@@ -1,4 +1,3 @@
-=====
 Django Sweet Autocomplete
 =====
 
@@ -8,61 +7,45 @@ functionalities implementation in your Django project.
 Quick start
 -----------
 
-1. Add "autocomplete" to your INSTALLED_APPS setting:
-
-    INSTALLED_APPS = [
-        ...
-        'autocomplete',
-    ]
-
-2. Include the autocomplete URLconf in your project urls.py this:
-
-    path('autocomplete/', include('autocomplete.urls')),
-
-...
-
-## How to use
-
-Create a new file in your called `autocomplete.py`. Next, create an autocomplete model:
-
+1. Add "autocomplete" to your INSTALLED_APPS setting::
 ```python
-from autocomplete import autocompletefactory, AbstractAutocomplete
+INSTALLED_APPS = [
+    ...
+    'autocomplete',
+]
+```
 
+2. Include the autocomplete URLconf in your project `urls.py`:
+```python
+urlpatterns = [
+    ...
+    path("", include("sweet_autocomplete.urls")),
+    ...
+]
 
-class PoolsAutocomplete(AbstractAutocomplete):
-    model = Pools
-    field = "name"
-    lookup = "__istartswith"
+```
+
+3. Create a file called `autocomplete.py` in your app:
+```python
+from sweet_autocomplete.autocomplete import autocompletefactory, AbstractAutocomplete
+from .models import MyModel
+
+class MyModelAutocomplete(AbstractAutocomplete):
+    model = MyModel
+    field = "field_name"
 
     class Serializer(serializers.ModelSerializer):
-        label = serializers.CharField(source="name")
+        label = serializers.CharField(source="field_name")
 
         class Meta:
-            model = Municipality
+            model = MyModel
             fields = ["label"]
 
 
-autocompletefactory.register("pools", PoolsAutocomplete)
+autocompletefactory.register("model_name", MyModelAutocomplete)
 ```
 
-Next, register URLs:
-
-```python
-import autocomplete
-
-
-urlpatterns = [
-
-    ...
-
-    # Autocomplete
-    url(r"", include("autocomplete.urls"))
-]
-
-autocomplete.autodiscover()
-```
-
-Finally, in template you can call the following endpoint:
+4. Use autocomplete endpoints in your templates:
 ```html
-"{% url 'autocomplete' 'pools' %}?query=..."
+"{% url 'autocomplete' 'model_name' %}?query=..."
 ```
