@@ -8,7 +8,7 @@ from rest_framework.renderers import JSONRenderer
 from .autocomplete import autocompletefactory
 
 
-class AutoComplete(views.APIView):
+class AutoCompleteView(views.APIView):
     """
     Autocomplete endpoint.
     """

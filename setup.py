@@ -11,7 +11,7 @@ setup(
     include_package_data=True,
     license='MIT',
     description='Simplify autocomplete functionalities implementation in your Django project.',
-    keywords='django autocomplete'
+    keywords='django autocomplete',
     long_description=README,
     author='Klemen Kubelj',
     author_email='klemen.kubelj@gmail.com',
