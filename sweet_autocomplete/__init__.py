@@ -1,6 +1,10 @@
-# from autocomplete.autocomplete import AbstractAutocomplete
-# from autocomplete.autocomplete import autocompletefactory
-# from autocomplete.utils import autodiscover_modules
+from django.utils.module_loading import autodiscover_modules
 
-# def autodiscover():
-#     autodiscover_modules('autocomplete', register_to=autocompletefactory)
+from sweet_autocomplete.autocomplete import autocompletefactory
+
+
+def autodiscover():
+    autodiscover_modules('autocomplete', register_to=autocompletefactory)
+
+
+default_app_config = 'sweet_autocomplete.apps.SweetAutocompleteConfig'
