@@ -1,3 +1,4 @@
 *.pyc
 *__pycache__
 .vscode/
+django_sweet_autocomplete.egg-info/
