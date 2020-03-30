@@ -28,16 +28,16 @@ class AbstractAutocomplete(ABC):
 class AutoCompleteFactory:
 
     def __init__(self):
-        self._models_registry = {}
+        self._registry = {}
 
     def get(self, model_name):
-        return self._models_registry.get(model_name)
+        return self._registry.get(model_name)
 
     def register(self, name, model):
         if not issubclass(model, AbstractAutocomplete):
             raise TypeError("Supplied model is not a valid model.")
 
-        self._models_registry[name] = model
+        self._registry[name] = model
 
 
 autocompletefactory = AutoCompleteFactory()
