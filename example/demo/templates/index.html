@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Autocomplete example</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+    <p>Try searching for "New" or "South"</p>
+    <p>Endpoint: {% url 'autocomplete' 'city' %}</p>
+
+    <input id="autocomplete-field">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $("#autocomplete-field").autocomplete({
+            source: function( request, response ) {
+                var term = request.term;
+                $.ajax({
+                    url: "{% url 'autocomplete' 'city' %}", 
+                    data: {
+                        query: term
+                    },
+                    success: response
+                })
+            },
+            focus: function() {
+                // prevent value inserted on focus
+                return false; 
+            },
+            select: function( event, ui ) {
+                this.value = ui.item.value;
+                return false;
+            }
+        });
+    </script>
+</body>
+
+</html>
