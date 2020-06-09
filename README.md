@@ -7,11 +7,11 @@ functionalities implementation in your Django project.
 Quick start
 -----------
 
-1. Add "autocomplete" to your INSTALLED_APPS setting::
+1. Add "sweetautocomplete" to your INSTALLED_APPS setting::
 ```python
 INSTALLED_APPS = [
     ...
-    'autocomplete',
+    'sweetautocomplete',
 ]
 ```
 
@@ -19,7 +19,7 @@ INSTALLED_APPS = [
 ```python
 urlpatterns = [
     ...
-    path("", include("sweet_autocomplete.urls")),
+    path("", include("sweetautocomplete.urls")),
     ...
 ]
 
@@ -27,7 +27,7 @@ urlpatterns = [
 
 3. Create a file called `autocomplete.py` in your app:
 ```python
-from sweet_autocomplete.autocomplete import autocompletefactory, AbstractAutocomplete
+from sweetautocomplete.autocomplete import autocompletefactory, AbstractAutocomplete
 from .models import MyModel
 
 class MyModelAutocomplete(AbstractAutocomplete):
