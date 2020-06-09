@@ -2,6 +2,18 @@ from abc import ABC
 
 
 class AbstractAutocomplete(ABC):
+    @classmethod
+    def get_result(cls, *args, **kwargs):
+        raise NotImplementedError(f" {cls} must implement 'get_result' method.")
+
+
+class ModelAutocomplete(AbstractAutocomplete):
+
+    @classmethod
+    def get_result(cls, *args, **kwargs):
+        queryset = cls.get_queryset(*args, **kwargs)
+        serializer = cls.serialize(queryset)
+        return serializer.data
 
     @classmethod
     def get_queryset(cls, query, extra_params=None, unique=True):

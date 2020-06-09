@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from sweetautocomplete import autocompletefactory
 from sweetautocomplete.autocomplete import AbstractAutocomplete, ModelAutocomplete
-from sweetautocomplete_tests.models import SimpleModel
+from .models import SimpleModel
 
 
 class InvalidAutocomplete():

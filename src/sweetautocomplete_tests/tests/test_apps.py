@@ -1,6 +1,7 @@
 from django.test import TestCase
 
-from smartautocomplete import autocompletefactory
+from sweetautocomplete import autocompletefactory
+
 
 class RegistryInitTestCase(TestCase):
     def test_correctly_initialized(self):

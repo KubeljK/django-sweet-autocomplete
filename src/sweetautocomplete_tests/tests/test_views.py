@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from smartautocomplete_tests.models import SimpleModel
+from sweetautocomplete_tests.models import SimpleModel
 
 
 class AutoCompleteTestCase(TestCase):

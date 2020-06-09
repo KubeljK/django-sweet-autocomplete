@@ -1,14 +1,14 @@
 import json
 
-from rest_framework import views, status
-from rest_framework.response import Response
+from rest_framework import status, views
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
 
 from .autocomplete import autocompletefactory
 
 
-class AutoCompleteView(views.APIView):
+class AutoComplete(views.APIView):
     """
     Autocomplete endpoint.
     """
@@ -21,6 +21,7 @@ class AutoCompleteView(views.APIView):
         Filters Model instances and returns serialized QuerySet.
         """
 
+        # Get parameters
         query = request.query_params.get("query", "")
         extra_params = request.query_params.get("extra_params", None)
         if extra_params:
@@ -28,7 +29,6 @@ class AutoCompleteView(views.APIView):
 
         AutoCompleter = autocompletefactory.get(model_name)
 
-        queryset = AutoCompleter.get_queryset(query, extra_params=extra_params)
-        serializer = AutoCompleter.serialize(queryset)
+        result = AutoCompleter.get_result(query, extra_params=extra_params)
 
-        return Response(serializer.data, status.HTTP_200_OK)
+        return Response(result, status.HTTP_200_OK)

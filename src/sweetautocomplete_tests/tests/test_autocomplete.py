@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from smartautocomplete import autocompletefactory
-from smartautocomplete_tests.autocomplete import InvalidAutocomplete, InvalidSimpleBasicAutocomplete
+from sweetautocomplete import autocompletefactory
+from sweetautocomplete_tests.autocomplete import InvalidAutocomplete, InvalidSimpleBasicAutocomplete
 
 
 class AutoCompleteFactoryTestCase(TestCase):
