@@ -3,6 +3,6 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path("", include("sweet_autocomplete.urls")),
+    path("", include("sweetautocomplete.urls")),
     path("", TemplateView.as_view(template_name="index.html"), name="index"),
 ]

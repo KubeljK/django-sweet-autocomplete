@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'sweet_autocomplete',
+    'sweetautocomplete',
     'demo',
 ]
 
@@ -55,6 +55,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+SWEETAUTOCOMPLETE = {
+    "enable_unique": False  # SQLite doesn't support it.
 }
 
 STATIC_URL = '/static/'
