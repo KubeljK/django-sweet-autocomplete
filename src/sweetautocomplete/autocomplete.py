@@ -1,4 +1,5 @@
 from abc import ABC
+from django.conf import settings
 
 
 class AbstractAutocomplete(ABC):
@@ -24,7 +25,7 @@ class ModelAutocomplete(AbstractAutocomplete):
             filters.update(cls.extra_params_to_filters(extra_params))
 
         qs = cls.model.objects.filter(**filters).order_by(cls.field)
-        if unique:
+        if unique and settings.SWEETAUTOCOMPLETE.get("enable_unique", True):
             qs = qs.distinct(cls.field)
         return qs[:20]
 
