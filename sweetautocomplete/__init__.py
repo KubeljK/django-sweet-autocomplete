@@ -1,6 +1,6 @@
 from django.utils.module_loading import autodiscover_modules
 
-from sweet_autocomplete.autocomplete import autocompletefactory
+from .autocomplete import autocompletefactory
 
 
 default_app_config = 'sweetautocomplete.apps.SweetAutocompleteConfig'

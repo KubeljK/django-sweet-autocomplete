@@ -1,15 +1,14 @@
 import os
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()
 
 setup(
     name='django-sweet-autocomplete',
-    version='0.0.3',
-    package_dir={'': 'src'},
-    packages=['sweetautocomplete'],
-    include_package_data=True,
+    version='0.0.4',
+    # package_dir={'': 'src'},
+    packages=find_packages(),#['sweetautocomplete'],
     license='MIT',
     description='Simplify autocomplete functionalities implementation in your Django project.',
     keywords='django autocomplete',

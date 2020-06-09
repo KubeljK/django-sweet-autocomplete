@@ -3,3 +3,4 @@
 .vscode/
 django_sweet_autocomplete.egg-info/
 db.*
+pyenv/
