@@ -1,5 +1,5 @@
 from abc import ABC
-from django.conf import settings
+from .settings import settings
 
 
 class AbstractAutocomplete(ABC):
