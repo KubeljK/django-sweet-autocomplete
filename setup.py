@@ -13,6 +13,7 @@ setup(
     description='Simplify autocomplete functionalities implementation in your Django project.',
     keywords='django autocomplete',
     long_description=README,
+    long_description_content_type='text/markdown',
     author='Klemen Kubelj',
     author_email='klemen.kubelj@gmail.com',
     url='https://github.com/kubeljk/django-sweet-autocomplete',
