@@ -18,7 +18,7 @@ setup(
     author_email='klemen.kubelj@gmail.com',
     url='https://github.com/kubeljk/django-sweet-autocomplete',
     install_requires=[
-        'django>=2.2,<3',
+        'django>=2.2',
         'psycopg2',
         'djangorestframework'
     ],
