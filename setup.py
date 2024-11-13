@@ -6,7 +6,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 
 setup(
     name='django-sweet-autocomplete',
-    version='1.0.2',
+    version='1.1.0',
     package_dir={'': 'src'},
     packages=['sweetautocomplete'],
     license='MIT',
@@ -18,16 +18,16 @@ setup(
     author_email='klemen.kubelj@gmail.com',
     url='https://github.com/kubeljk/django-sweet-autocomplete',
     install_requires=[
-        'django>=2.2',
-        'psycopg2',
-        'djangorestframework'
+        'Django>=3.2',
+        'djangorestframework>=3',
+        'psycopg2-binary>=2.8',
     ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 4.2',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'License :: OSI Approved :: MIT License',
