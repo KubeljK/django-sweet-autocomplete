@@ -6,7 +6,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 
 setup(
     name='django-sweet-autocomplete',
-    version='1.1.0',
+    version='1.2.0',
     package_dir={'': 'src'},
     packages=['sweetautocomplete'],
     license='MIT',
